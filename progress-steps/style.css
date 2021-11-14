@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+:root {
+    --line-border-fill:blueviolet;
+    --line-border-empty:cadetblue;
+}
 body {
     background-color: bisque;
     font-family: 'Roboto', sans-serif;
@@ -27,7 +30,7 @@ body {
     width: 350px;
 }
 .progress::before{
-    background-color: cadetblue;
+    background-color:var(--line-border-empty);
     content: '';
     position: absolute;
     top:50%;
@@ -39,7 +42,7 @@ body {
     transition: 0.4s ease;
 }
 .progress{
-    background-color: blueviolet;
+    background-color: var(--line-border-fill);
     position: absolute;
     top:50%;
     left:0;
@@ -58,11 +61,30 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border:4px solid cadetblue;
+    border:4px solid var(--line-border-empty);;
     transition: .4s ease;
 
 }
 
 .circle.active {
-    border-color: blueviolet;
+    border-color: var(--line-border-fill);;
+}
+
+.btn{
+    background-color: var(--line-border-fill);
+    color: turquoise;
+    border: 0;
+    border-radius: 5px;
+    font-family: inherit;
+    padding:8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+.btn:active{
+    transform: scale(0.98);
+}
+
+.btn:disabled{
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
 }
