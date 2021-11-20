@@ -7,15 +7,27 @@ generateJoke();
 
 jokeBtn.addEventListener("click", generateJoke);
 
-function generateJoke() {
+// function generateJoke() {
+//   const config = {
+//     headers: {
+//       Accept: "application/json",
+//     },
+//   };
+//   fetch("https://icanhazdadjoke.com", config)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       theJoke.innerHTML = data.joke;
+//     });
+// }
+
+// with async await
+async function generateJoke() {
   const config = {
     headers: {
       Accept: "application/json",
     },
   };
-  fetch("https://icanhazdadjoke.com", config)
-    .then((response) => response.json())
-    .then((data) => {
-      theJoke.innerHTML = data.joke;
-    });
+  const response = await fetch("https://icanhazdadjoke.com", config);
+  const data = await response.json();
+  theJoke.innerHTML = data.joke;
 }
