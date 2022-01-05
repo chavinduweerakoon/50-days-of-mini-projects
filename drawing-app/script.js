@@ -70,12 +70,16 @@ increaseBtn.addEventListener("click", () => {
 
 decreaseBtn.addEventListener("click", () => {
   size -= 5;
-  if (size < 10) {
-    size = 10;
+  if (size < 5) {
+    size = 5;
   }
   updateSizeOnScreen();
 });
 
 colorEl.addEventListener("change", (e) => {
   color = e.target.value;
+});
+
+clearEl.addEventListener("click", () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
