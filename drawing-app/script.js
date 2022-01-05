@@ -4,6 +4,7 @@ const decreaseBtn = document.getElementById("decrease");
 const sizeEl = document.getElementById("size");
 const colorEl = document.getElementById("color");
 const clearEl = document.getElementById("clear");
+const exportBtn = document.getElementById("export");
 
 const ctx = canvas.getContext("2d");
 
@@ -82,4 +83,12 @@ colorEl.addEventListener("change", (e) => {
 
 clearEl.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+exportBtn.addEventListener("click", () => {
+  let image = canvas
+    .toDataURL("image/png")
+    .replace("image/png", "image/octet-stream");
+  window.location.href = image;
+  console.log(image);
 });
