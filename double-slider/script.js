@@ -24,3 +24,5 @@ const changeSlide = (direction) => {
     activeSlideIndex * slidesLength
   }px)`;
 };
+
+//todo -> fix the bug in element decleration -
