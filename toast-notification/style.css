@@ -44,6 +44,19 @@ body {
     margin: 0.5rem;
 }
 
+.toast.info {
+    background-color: #ffff;
+    color: blue;
+}
+.toast.success {
+    background-color: rgb(52, 180, 58);
+    color: rgb(158, 224, 224);
+}
+.toast.danger{
+    background-color: rgb(158, 29, 29);
+    color: rgb(204, 204, 223);
+}
+
 .btn:focus{
     outline: none;
 }
